@@ -7,8 +7,8 @@ where on the right side of the screen should display a cart that show a list of 
 
 ## Contact Details
 Please fill in your name and email
-- Name: -
-- Email: -
+- Name: Djaballah Mohammed Djedid
+- Email: djaballah.djedid@outlook.com
 
 ## Features
 
