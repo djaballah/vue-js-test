@@ -1,3 +1,14 @@
+<script>
+import RobotsListingView from "./views/RobotsListingView.vue";
+
+export default {
+  components: {
+    RobotsListingView,
+  },
+};
+</script>
 <template>
-  <div>Hello Robots</div>
+  <div class="container-fluid">
+    <RobotsListingView />
+  </div>
 </template>
