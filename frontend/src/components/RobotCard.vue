@@ -27,6 +27,10 @@ export default {
 
       return this.stock - this.store.state.selectedRobots.get(this.name).amount;
     },
+    formattedDate() {
+      const date = new Date(this.createdAt);
+      return date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
+    },
   },
   methods: {
     addRobotToCart() {
@@ -58,7 +62,7 @@ export default {
       <ul>
         <li>Price: {{ this.formattedPrice }}</li>
         <li>Material: {{ this.material }}</li>
-        <li>Created at: {{ this.createdAt }}</li>
+        <li>Created at: {{ this.formattedDate }}</li>
         <li>{{ this.computedStock }} available</li>
       </ul>
       <div class="input-group mb-2">
