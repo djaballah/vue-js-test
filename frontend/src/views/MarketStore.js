@@ -24,4 +24,15 @@ export default class Store {
       ...robot,
     });
   }
+
+  increaseSelectedRobot(robotName) {
+    const selectedRobot = this.state.selectedRobots.get(robotName);
+
+    if (selectedRobot.stock == 0) {
+      alert("The quantity you requested is not available in stock");
+      return;
+    }
+    selectedRobot.amount += 1;
+    selectedRobot.stock -= 1;
+  }
 }

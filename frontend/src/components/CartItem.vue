@@ -13,6 +13,14 @@ export default {
     imageLink() {
       return this.store.state.selectedRobots.get(this.robotName).imageLink;
     },
+    stock() {
+      return this.store.state.selectedRobots.get(this.robotName).stock;
+    },
+  },
+  methods: {
+    addRobot() {
+      this.store.increaseSelectedRobot(this.robotName);
+    },
   },
 };
 </script>
@@ -34,7 +42,14 @@ export default {
           </div>
           <div>
             <button class="col-3 btn btn-primary me-2" type="button">-</button>
-            <button class="col-3 btn btn-primary" type="button">+</button>
+            <button
+              class="col-3 btn btn-primary"
+              type="button"
+              :disabled="this.stock <= 0"
+              @click="addRobot"
+            >
+              +
+            </button>
           </div>
         </div>
       </div>

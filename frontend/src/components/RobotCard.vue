@@ -43,6 +43,7 @@ export default {
         name: this.name,
         price: this.price,
         imageLink: this.imageLink,
+        stock: this.computedStock - this.selectedAmount,
       };
       this.store.addRobotToCart(robot, this.selectedAmount);
     },
