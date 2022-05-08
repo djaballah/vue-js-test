@@ -5,9 +5,17 @@ export default {
   props: ["store"],
   data() {
     return {
-      totalAmount: 0,
       totalPrice: 0,
     };
+  },
+  computed: {
+    totalAmount() {
+      let totalAmount = 0;
+      this.store.state.selectedRobots.forEach((value) => {
+        totalAmount += value.amount;
+      });
+      return totalAmount;
+    },
   },
   components: {
     CartItem,
