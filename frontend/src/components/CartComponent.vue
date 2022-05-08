@@ -3,11 +3,6 @@ import CartItem from "./CartItem.vue";
 
 export default {
   props: ["store"],
-  data() {
-    return {
-      totalPrice: 0,
-    };
-  },
   computed: {
     totalAmount() {
       let totalAmount = 0;
@@ -15,6 +10,13 @@ export default {
         totalAmount += value.amount;
       });
       return totalAmount;
+    },
+    totalPrice() {
+      let totalPrice = 0;
+      this.store.state.selectedRobots.forEach((value) => {
+        totalPrice += parseFloat(value.price) * value.amount;
+      });
+      return totalPrice;
     },
   },
   components: {
