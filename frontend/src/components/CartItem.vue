@@ -47,6 +47,7 @@ export default {
           </div>
           <div>
             <button
+              title="Remove one robot from this type"
               class="col-3 btn btn-primary me-2"
               type="button"
               @click="removeRobot"
@@ -54,6 +55,7 @@ export default {
               -
             </button>
             <button
+              title="Add one more robot of this type"
               class="col-3 btn btn-primary"
               type="button"
               :disabled="this.stock <= 0"
