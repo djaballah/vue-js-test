@@ -21,6 +21,9 @@ export default {
     addRobot() {
       this.store.increaseSelectedRobot(this.robotName);
     },
+    removeRobot() {
+      this.store.decreaseSelectedRobot(this.robotName);
+    },
   },
 };
 </script>
@@ -41,7 +44,13 @@ export default {
             <small class="card-text">Total price: {{ this.price }}</small>
           </div>
           <div>
-            <button class="col-3 btn btn-primary me-2" type="button">-</button>
+            <button
+              class="col-3 btn btn-primary me-2"
+              type="button"
+              @click="removeRobot"
+            >
+              -
+            </button>
             <button
               class="col-3 btn btn-primary"
               type="button"

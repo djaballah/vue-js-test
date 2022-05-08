@@ -35,4 +35,14 @@ export default class Store {
     selectedRobot.amount += 1;
     selectedRobot.stock -= 1;
   }
+
+  decreaseSelectedRobot(robotName) {
+    const selectedRobot = this.state.selectedRobots.get(robotName);
+
+    selectedRobot.amount -= 1;
+    selectedRobot.stock += 1;
+    if (selectedRobot.amount == 0) {
+      this.state.selectedRobots.delete(robotName);
+    }
+  }
 }
