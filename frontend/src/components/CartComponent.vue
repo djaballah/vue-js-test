@@ -1,5 +1,6 @@
 <script>
 import CartItem from "./CartItem.vue";
+import { formatCurrency } from "../utilities/formatter";
 
 export default {
   props: ["store"],
@@ -16,7 +17,7 @@ export default {
       this.store.state.selectedRobots.forEach((value) => {
         totalPrice += parseFloat(value.price) * value.amount;
       });
-      return totalPrice;
+      return formatCurrency(totalPrice);
     },
   },
   components: {

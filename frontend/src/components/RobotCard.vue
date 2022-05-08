@@ -1,4 +1,6 @@
 <script>
+import { formatCurrency } from "../utilities/formatter";
+
 export default {
   props: [
     "name",
@@ -16,10 +18,7 @@ export default {
   },
   computed: {
     formattedPrice() {
-      return new Intl.NumberFormat("th-TH", {
-        style: "currency",
-        currency: "LKR",
-      }).format(this.price);
+      return formatCurrency(this.price);
     },
     computedStock() {
       if (!this.store.state.selectedRobots.has(this.name)) {

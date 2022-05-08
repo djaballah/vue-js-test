@@ -1,4 +1,6 @@
 <script>
+import { formatCurrency } from "../utilities/formatter";
+
 export default {
   props: ["robotName", "store"],
   computed: {
@@ -6,7 +8,7 @@ export default {
       return this.store.state.selectedRobots.get(this.robotName).amount;
     },
     price() {
-      return (
+      return formatCurrency(
         this.store.state.selectedRobots.get(this.robotName).price * this.amount
       );
     },
